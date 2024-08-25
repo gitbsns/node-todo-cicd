@@ -12,7 +12,7 @@ pipeline {
         stage("build && test"){
             steps{
                 sh "docker build -t node-app-test-new ."
-                echo 'code build bhi ho gaya'
+                echo 'code build ho gaya'
             }
         }
         stage("scan the image"){
