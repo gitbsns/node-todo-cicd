@@ -5,7 +5,7 @@ pipeline {
         
         stage("cloning the code"){
             steps{
-                git url: "https://github.com/LondheShubham153/node-todo-cicd.git", branch: "master"
+                git url: "https://github.com/gitbsns/node-todo-cicd.git", branch: "master"
                 echo ' code clone ho gaya'
             }
         }
