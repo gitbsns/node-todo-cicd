@@ -3,10 +3,10 @@ pipeline {
     
     stages {
         
-        stage("code"){
+        stage("cloning the code"){
             steps{
                 git url: "https://github.com/LondheShubham153/node-todo-cicd.git", branch: "master"
-                echo 'bhaiyya code clone ho gaya'
+                echo ' code clone ho gaya'
             }
         }
         stage("build && test"){
@@ -15,7 +15,7 @@ pipeline {
                 echo 'code build bhi ho gaya'
             }
         }
-        stage("scan image"){
+        stage("scan the image"){
             steps{
                 echo 'image scanning ho gayi'
             }
@@ -30,7 +30,7 @@ pipeline {
                 }
             }
         }
-        stage("deploy"){
+        stage("deploy the container"){
             steps{
                 sh "docker-compose down && docker-compose up -d"
                 echo 'deployment ho gaya'
