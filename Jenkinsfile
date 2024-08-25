@@ -32,7 +32,9 @@ pipeline {
         }
         stage("deploy the container"){
             steps{
-                sh "docker-compose down && docker-compose up -d"
+                sh "docker stop nodeapp1"
+                sh "docker rm -f nodeapp1"
+                sh "docker run -d --name nodeapp1 -p 8000:8000 notesapp"
                 echo 'deployment ho gaya'
             }
         }
